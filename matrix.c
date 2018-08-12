@@ -11,7 +11,6 @@
     What if the same header file is included twice?
     Do reply your answers by commenting on our post @ proclub.codeingzone.in or drop us a mail at proclubvnit@gmail.com
 */
-//MAKE CHANGES
 #define ADDITION 1
 #define SUBTRACTION 2
 #define MULTIPLICATION 3
@@ -65,6 +64,94 @@ void MultMatrices()
      PrintMatrix(r1,c2,d);
    }
     
+}
+
+void AddMatrices()
+{
+    int r1, c1;
+    
+    scanf("%d %d", &r1, &c1);
+    int a[r1][c1];
+    ReadMatrix(r1, c1, a);
+    
+    int r2, c2;
+    scanf("%d %d", &r1, &c2);
+    
+    if(r1!==r1||c1!==c2)
+        printf("\nMatrix addition not possible");
+    
+    else
+    {
+        int b[r2][c2];
+        
+        int i,j;
+        
+        int c[r1][c1];
+        
+        for(i=0;i<r1;i++)
+        {
+            for(j=0;j<c1;j++)
+            { 
+                c[i][j]=a[i][j]+b[i][j];  
+            } 
+        }
+        PrintMatrix(r1,c1,c);
+    }
+}
+
+void SubMatrices()
+{
+    int r1, c1;
+    
+    scanf("%d %d", &r1, &c1);
+    int a[r1][c1];
+    ReadMatrix(r1, c1, a);
+    
+    int r2, c2;
+    scanf("%d %d", &r1, &c2);
+    
+    if(r1!==r1||c1!==c2)
+        printf("\nMatrix subtraction not possible");
+    
+    else
+    {
+        int b[r2][c2];
+        
+        int i,j;
+        
+        int c[r1][c1];
+        
+        for(i=0;i<r1;i++)
+        {
+            for(j=0;j<c1;j++)
+            { 
+                c[i][j]=a[i][j]-b[i][j];  
+            } 
+        }
+        PrintMatrix(r1,c1,c);
+    }
+}
+
+void Transpose()
+{
+    int r1, c1;
+    
+    scanf("%d %d", &r1, &c1);
+    int a[r1][c1];
+    ReadMatrix(r1, c1, a);
+    
+    int b[c1][r1];
+    
+    int i,j;
+    for(i=0;i<r1;i++)
+    {
+        for(j=0;j<c1;j++)
+        {
+            b[j][i]=a[i][j];
+        }
+    }
+    
+    PrintMatrix(c1, r1, b);
 }
 
 int main(){
